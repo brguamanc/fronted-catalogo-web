@@ -1,0 +1,57 @@
+
+
+    <header>
+      <div class="home">
+        <div class="logo"><a href="#">BIENVENIDOS AL CATÁLOGO DE TRUE BEAUTY</a></div>
+        <div class="imagen">
+          <img src="" alt="">
+        </div>
+        <div class="slogan">
+        <h1>자신의 가치를 잊지 말고 자신을 사랑하세요.</h1>
+        <h2>No olvides tu valor y ámate a ti mismo.</h2>
+        </div>
+        <div class="deslizar"><a href="#">Desliza para mirar nuestros productos</a></div>
+        <div class="icono"><img src="" alt=""></div>
+      </div>
+
+
+    </header>
+    <section>
+      <div class="section">
+        <div class="section2">
+          <div class="container" id="items-container">
+            @for (item of listCatalogo;track $index){
+                <div class="items">
+                    <div class="img"><img src=`{{item.imagen}}` alt=""></div>
+                    <div class="name">{{item.nombre}}</div>
+                    <div class="price">{{item.precio}}</div>
+                    <div class="info">{{item.descripcion}}</div>
+                  </div>
+          
+            }
+          </div>
+        </div>
+      </div>
+     
+    </section>
+    <footer>
+      <div class="footer0">
+        <h1>TRUE BEAUTY</h1>
+      </div>
+      <div class="footer1 ">
+        Connect with us at<div class="social-media">
+          <a href="#">
+          </a>
+          <a href="#">
+          </a>
+          <a href="#">
+          </a>
+        </div>
+      </div>
+      <div class="footer3">Copyright © <h4>TRUE BEAUTY</h4> 2024</div>
+      <div class="footer3">Creado por <h4>Byron Guamán</h4> </div>
+    </footer>
+    
+  
+
+
