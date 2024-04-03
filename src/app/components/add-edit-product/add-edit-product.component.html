@@ -1,9 +1,10 @@
+
 <div class="row mt-1">
     <div class="col-lg-4 offset-lg-4">
         <div class="card border-secondary mb-3" style="max-width: 25rem;">
-            <div class="card-header text-center">Agregar Producto</div>
+            <div class="card-header text-center">{{operacion}} Producto</div>
             <div class="card-body">
-                <form [formGroup]="form" >
+                <form [formGroup]="form" (ngSubmit)="onSubmit()">
               
                     <input formControlName="nombre" type="text" class="form-control" placeholder="Ingrese el nombre del producto">
                     <input formControlName="marca"  type="text" class="form-control mt-2" placeholder="Ingrese la marca del producto">
@@ -13,7 +14,7 @@
                     <input formControlName="imagen"  type="text" class="form-control mt-2" placeholder="Ingrese el link de la imagen">
                     <div class="row mt-4 text-center">
                         <div class="col-lg-6">
-                            <button routerLink="/" type="button" class="btn btn-outline-primary">Volver</button>
+                            <button routerLink="/home" type="button" class="btn btn-outline-primary">Volver</button>
                         </div>
                         <div class="col-lg-6">
                             <button type="submit" class="btn btn-outline-secondary"  >Aceptar</button>
@@ -23,7 +24,11 @@
                     </div>
                  
                 </form>
-              
+
+              <div class="mt-4 text-center">
+                <input type="file" (change)="selectImagen($event)">
+                <button (click)="subir()" type="button" class="btn btn-outline-secondary"  >subir</button>
+            </div>
             </div>   
           </div>
     </div>

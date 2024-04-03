@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductoService } from '../../services/producto.service';
-import { Catalogo } from '../../interfaces/products';
+import { Catalogo, Imagenes, Product } from '../../interfaces/products';
 
 @Component({
   selector: 'app-catalogo',
@@ -10,20 +10,34 @@ import { Catalogo } from '../../interfaces/products';
   styleUrl: './catalogo.component.css'
 })
 export class CatalogoComponent implements OnInit{
-  listCatalogo:Catalogo[]=[]
- 
+  lisProductos:Product[]=[]
+  listaImagenes:Imagenes[]=[]
+  listData:Catalogo[]=[]
+
   constructor(private productService:ProductoService){}
  
 ngOnInit(): void {
   this.getAllProducts()
+  this.getAllImagenes()
 }
 
 getAllProducts(){
   this.productService.getListProducts().subscribe({
     next:(response)=>{
-      this.listCatalogo=response.data;
-
+      this.lisProductos=response.data;
+      console.log(this.lisProductos)
     }
   })
 }
+getAllImagenes(){
+  this.productService.getListImagenes().subscribe({
+    next:(response)=>{
+      this.listaImagenes=response.data;
+      console.log(this.listaImagenes)
+    }
+  })
+}
+
+
+
 }

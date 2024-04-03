@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
-
+import { ProgressBarComponent } from './shared/progress-bar/progress-bar.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { ListProductsComponent } from "./components/list-products/list-products.component";
 import { CatalogoComponent } from './components/catalogo/catalogo.component';
@@ -14,7 +14,7 @@ import {HttpClientModule} from '@angular/common/http'
     standalone: true,
     templateUrl: './app.component.html',
     styleUrl: './app.component.css',
-    imports: [RouterOutlet, NavbarComponent, ListProductsComponent,CommonModule,ReactiveFormsModule,FormsModule,HttpClientModule,CatalogoComponent]
+    imports: [RouterOutlet, NavbarComponent,ProgressBarComponent, ListProductsComponent,CommonModule,ReactiveFormsModule,FormsModule,HttpClientModule,CatalogoComponent]
 })
 export class AppComponent {
   title = 'fronted-catalogo-web';

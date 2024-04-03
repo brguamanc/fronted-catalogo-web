@@ -20,9 +20,9 @@
       <div class="section">
         <div class="section2">
           <div class="container" id="items-container">
-            @for (item of listCatalogo;track $index){
+            @for (item of lisProductos;track $index){
                 <div class="items">
-                    <div class="img"><img src=`{{item.imagen}}` alt=""></div>
+                    <div class="img"><img src={{item.imagen}} alt=""></div>
                     <div class="name">{{item.nombre}}</div>
                     <div class="price">{{item.precio}}</div>
                     <div class="info">{{item.descripcion}}</div>

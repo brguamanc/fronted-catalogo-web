@@ -21,5 +21,15 @@ export interface Catalogo{
     descripcion:string;
     precio:number;
     cantidad:number;
-    imagen:string;
+    url_imagen:string;
+}
+export interface Imagenes{
+    _id?:string;
+    url_original:string;
+    createdAt:string;
+    updatedAt:string;
+    cloudinary_url:{
+        public_id:string;
+        url:string;
+    }
 }
