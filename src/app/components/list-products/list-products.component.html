@@ -25,7 +25,8 @@
               <td>{{item.descripcion}}</td>
               <td>{{item.precio}}</td>
               <td>{{item.cantidad}}</td>
-              <td>{{item.imagen}}</td>
+              <td *ngIf="item.imagen" ><a href="{{item.imagen}}" target="_blank">Ver</a></td>
+              <td *ngIf="!item.imagen" >Sin imagen</td>
               <td>
                   <button type="button" routerLink="/edit/{{item._id}}" class="btn btn-info btn-sm"   >Edit</button>
                   <button type="button" (click)="item._id && deleteProduct(item._id)"  class="btn btn-danger btn-sm ms-2">Delete</button>
