@@ -11,6 +11,9 @@
                     <input formControlName="descripcion" type="text" class="form-control mt-2" placeholder="Ingrese la descripción del producto">
                     <input formControlName="precio"  type="number" class="form-control mt-2" placeholder="Ingrese el precio del producto">
                     <input formControlName="cantidad"  type="number" class="form-control mt-2" placeholder="Ingrese la cantidad del producto">
+                    <div class="mt-2">
+                        <input  type="file" (change)="selectImagen($event)">
+                    </div>
                     <div class="row mt-4 text-center">
                         <div class="col-lg-6">
                             <button routerLink="/home" type="button" class="btn btn-outline-primary">Volver</button>
@@ -24,10 +27,7 @@
                  
                 </form>
 
-              <div class="mt-4 text-center">
-                <input type="file" (change)="selectImagen($event)">
-                <button (click)="subir()" type="button" class="btn btn-outline-secondary"  >subir</button>
-            </div>
+             
             </div>   
           </div>
     </div>

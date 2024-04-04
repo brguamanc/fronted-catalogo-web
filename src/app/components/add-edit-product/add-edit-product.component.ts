@@ -47,14 +47,7 @@ export class AddEditProductComponent  {
   selectImagen($event:any){
     this.imagen =  $event.target.files[0]
   }
-  subir(){
-    if(this.imagen){
-      this.uploadFirebase(this.imagen )
-    }else{
-      console.log('No hay imagen',)
-    }
-
-  }
+ 
   async uploadFirebase(file:any){
     const uniqueSuffix = Math.round(Math.random() * 1E5)
     const ext = file.name.split('.').pop()
@@ -83,7 +76,6 @@ export class AddEditProductComponent  {
       next:(response)=>{
         this.data=response.data;
         this.loading = false;
-        console.log(this.data)
         this.form.patchValue({
           nombre: this.data.nombre,
           marca: this.data.marca,
@@ -103,7 +95,13 @@ export class AddEditProductComponent  {
     if (this.form.valid) {
       if (this.id != "null") {
         this.loading = true;
-
+        if (this.imagen){
+          await this.uploadFirebase(this.imagen )
+        }else{
+          this.form.patchValue({
+            imagen: ""
+          });
+        }
         this.productoService
           .updateProduct(this.id, this.form.value)
           .subscribe({
@@ -116,7 +114,9 @@ export class AddEditProductComponent  {
           this.loading = false;
       } else {
         this.loading = true;
-        await this.uploadFirebase(this.imagen )
+        if (this.imagen){
+          await this.uploadFirebase(this.imagen )
+        }
         this.productoService.createProduct(this.form.value).subscribe({
           next: (response: any) => {
             this.resetEmployeeForm();
