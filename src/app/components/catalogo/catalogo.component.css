@@ -4,13 +4,15 @@
     box-sizing: border-box;
     
   }
-  header {
+  #inicio {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
     min-height: 100dvh;
     width: 100%;
     background: #f7cac9;
+    background-image: url(/assets/fondo.jpg);
+    background-repeat:repeat-y
   }
   @keyframes latidos {
     from { transform: none; }
@@ -159,6 +161,7 @@
     background-size: cover;
     align-items: center;
     color: white;
+    background-image: url(/assets/chango.jpeg);
   }
   
   
@@ -262,13 +265,13 @@
       bottom: 8px;
     }
 
-    header {
+    #inicio {
       height: 150px;
     }
   }
   @media screen and (max-width: 550px) {
 
-    header {
+    #inicio  {
       padding: 50px;
       height: 130px;
       display: flex;
